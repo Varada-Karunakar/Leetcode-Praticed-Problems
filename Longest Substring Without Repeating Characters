@@ -1,0 +1,18 @@
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        z=0; i=0; ss=''
+        #if len(s)==1:
+        #    return 1
+        #if len(s)==0:
+        #    return 0
+        while(i<len(s)):
+            if s[i] not in ss:
+                ss=ss+s[i]
+                i+=1
+            else:
+                ss=ss[ss.index(s[i])+1:]+s[i]
+                i+=1
+            if len(ss)>z:
+                z=len(ss)
+        return z
+            
