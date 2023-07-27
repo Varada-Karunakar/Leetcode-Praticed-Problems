@@ -1,0 +1,21 @@
+class Solution(object):
+    def findMedianSortedArrays(self, nums1, nums2):
+        def oddnum(d,n):
+            b=n//2
+            return float(d[b])
+        def evennum(d,n):
+            b=n//2
+            c=d[b]
+            d=d[b-1]
+            return (float(c+d)/2)
+        
+        d=[] 
+        d=nums1+nums2
+        d.sort()
+        n=len(d)
+        if(n%2==0):
+            ans=evennum(d,n)
+            return ans
+        else:
+            an=oddnum(d,n)
+            return an
