@@ -1,0 +1,31 @@
+class Solution(object):
+    def longestValidParentheses(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        left=right=m=0
+        i=0
+        while(i<len(s)):
+            if(s[i]=='('):
+                left+=1
+            else:
+                right+=1
+            if(left==right):
+                m=max(m,left+right)
+            elif(left<right):
+                left=right=0
+            i=i+1
+        left=right=0
+        i=len(s)-1
+        while(i>=0):
+            if(s[i]=='('):
+                left+=1
+            else:
+                right+=1
+            if(left==right):
+                m=max(m,left+right)
+            elif(right<left):
+                left=right=0
+            i=i-1
+        return m
