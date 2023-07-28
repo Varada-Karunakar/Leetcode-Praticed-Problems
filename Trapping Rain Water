@@ -1,0 +1,15 @@
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        lmax=[0]*len(height)
+        rmax=[0]*len(height)
+        r=height[::-1]
+        lmax[0]=height[0]
+        rmax[0]=height[-1]
+        for i in range(1,len(height)):
+            lmax[i]=max(height[i],lmax[i-1])
+            rmax[i]=max(r[i],rmax[i-1])
+        rmax=rmax[::-1]
+        ans=0
+        for i in range(len(height)):
+            ans+=min(lmax[i],rmax[i])-height[i]
+        return ans
