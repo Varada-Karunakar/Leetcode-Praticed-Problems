@@ -1,0 +1,37 @@
+class Solution(object):
+    def searchRange(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        def first(n,nums,t):
+            c=0
+            for i in range(n):
+                if(nums[i]==t):
+                    c=c+i
+                    l.append(c)
+                    break
+                if(t not in nums):
+                    l.append(-1)
+                    break
+        def last(n,nums,t):
+            c=0
+            for i in range(n-1,-1,-1):
+                if(nums[i]==t):
+                    c=c+i
+                    l.append(c)
+                    break
+                if(t not in nums):
+                    l.append(-1)
+                    break
+        n=len(nums)
+        t=target
+        l=[]
+        if(n==0):
+            a=[-1,-1]
+            return a
+        else:
+            a=first(n,nums,t)
+            b=last(n,nums,t)
+            return l
