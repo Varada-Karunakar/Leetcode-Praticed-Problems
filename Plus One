@@ -1,0 +1,16 @@
+class Solution(object):
+    def plusOne(self, d):
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """
+        s=''
+        l=[]
+        for i in d:
+            s=s+str(i)
+        a=int(s)+1
+        b=str(a)
+        for i in b:
+            c=int(i)
+            l.append(c)
+        return l
